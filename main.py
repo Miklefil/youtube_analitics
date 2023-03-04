@@ -1,17 +1,20 @@
-from utils.channel import Channel
+import os
+import json
+
+from googleapiclient.discovery import build
 
 
-def main():
+class Channel:
 
-    # channel_id = 'UCMCgOm8GZkHp8zJ6l7_hIuA'  # вДудь
-    channel_id = 'UC1eFXmJNkjITxPFWTy6RsWg'    # Редакция
+    def __init__(self, channel_id):
+        self.channel_id = channel_id
+        api_key: str = os.getenv('API_KEY')
+        youtube = build('youtube', 'v3', developerKey=api_key)
+        self.channel = youtube.channels().list(id=channel_id, part='snippet,statistics').execute()
 
-    channel = Channel(channel_id)
-    channel.print_info()
-
-    vdud = Channel('UCMCgOm8GZkHp8zJ6l7_hIuA')
-    vdud.print_info()
+    def print_info(self):
+        print(json.dumps(self.channel, indent=2, ensure_ascii=False))
 
 
-if __name__ == "__main__":
-    main()
+vdud = Channel('UCMCgOm8GZkHp8zJ6l7_hIuA')
+vdud.print_info()

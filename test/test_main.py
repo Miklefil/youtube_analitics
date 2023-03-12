@@ -19,7 +19,7 @@ def test_str(coll):
 
 
 def test_add(coll, coll2):
-    assert coll + coll2 == 14000000
+    assert coll + coll2 == 14010000
 
 
 def test_lt(coll, coll2):

@@ -1,5 +1,6 @@
 import os
 import json
+from class_plvideo import*
 
 from googleapiclient.discovery import build
 
@@ -50,3 +51,7 @@ class Channel:
         return int(self.subscriber_count) > int(other.subscriber_count)
 
 
+video1 = Video('9lO06Zxhu88')
+video2 = PLVideo('BBotskuyw_M', 'PL7Ntiz7eTKwrqmApjln9u4ItzhDLRtPuD')
+print(video1)
+print(video2)

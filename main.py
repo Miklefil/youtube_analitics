@@ -50,11 +50,3 @@ class Channel:
         return int(self.subscriber_count) > int(other.subscriber_count)
 
 
-vdud = Channel('UCMCgOm8GZkHp8zJ6l7_hIuA')
-redact = Channel('UC1eFXmJNkjITxPFWTy6RsWg')
-print(vdud)
-print(redact)
-print(vdud > redact)
-print(vdud < redact)
-print(vdud + redact)
-
